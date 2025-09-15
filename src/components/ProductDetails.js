@@ -1,4 +1,7 @@
-/* ... previous imports ... */
+// src/components/ProductDetails.js
+import React, { useState } from "react";
+import { useParams, useNavigate } from "react-router-dom";
+import { useProducts } from "../context/ProductContext";
 import ProductForm from "./ProductForm";
 
 export default function ProductDetails() {
