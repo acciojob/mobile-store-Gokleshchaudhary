@@ -1,0 +1,58 @@
+export const initialProducts = [
+  {
+    id: 1,
+    name: "iPhone 14",
+    price: 799,
+    description: "Latest Apple flagship with A15 Bionic chip.",
+    image: "https://via.placeholder.com/300x200?text=iPhone+14",
+  },
+  {
+    id: 2,
+    name: "Samsung Galaxy S22",
+    price: 699,
+    description: "Premium Android experience with excellent camera.",
+    image: "https://via.placeholder.com/300x200?text=Galaxy+S22",
+  },
+  {
+    id: 3,
+    name: "Google Pixel 7",
+    price: 599,
+    description: "Pure Android with best-in-class photography.",
+    image: "https://via.placeholder.com/300x200?text=Pixel+7",
+  },
+  {
+    id: 4,
+    name: "OnePlus 10 Pro",
+    price: 649,
+    description: "Flagship killer with 120 Hz AMOLED display.",
+    image: "https://via.placeholder.com/300x200?text=OnePlus+10+Pro",
+  },
+  {
+    id: 5,
+    name: "Xiaomi 12",
+    price: 499,
+    description: "High-end specs at an affordable price.",
+    image: "https://via.placeholder.com/300x200?text=Xiaomi+12",
+  },
+  {
+    id: 6,
+    name: "Sony Xperia 1 IV",
+    price: 899,
+    description: "Creator-focused phone with 4K OLED display.",
+    image: "https://via.placeholder.com/300x200?text=Xperia+1+IV",
+  },
+  {
+    id: 7,
+    name: "Motorola Edge 30",
+    price: 399,
+    description: "Mid-range 5G phone with clean software.",
+    image: "https://via.placeholder.com/300x200?text=Edge+30",
+  },
+  {
+    id: 8,
+    name: "Nothing Phone 1",
+    price: 399,
+    description: "Unique design with Glyph interface.",
+    image: "https://via.placeholder.com/300x200?text=Nothing+Phone",
+  },
+];

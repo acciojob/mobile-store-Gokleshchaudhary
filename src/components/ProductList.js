@@ -1,22 +1,23 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useProducts } from "../context/ProductContext";
 
-function ProductList({ products }) {
+export default function ProductList() {
+  const { products } = useProducts();
+
   return (
     <div>
-      <h2>Available Mobiles</h2>
-      <ul>
-        {products.map(product => (
-          <li key={product.id}>
-            <Link to={`/products/${product.id}`}>
-              {product.name} - ${product.price}
-            </Link>
-          </li>
+      <h2>Mobile Store</h2>
+      <div style={{ display: "flex", flexWrap: "wrap", gap: "1rem" }}>
+        {products.map((p) => (
+          <div key={p.id} style={{ border: "1px solid #ccc", width: 220 }}>
+            <img src={p.image} alt={p.name} width="100%" />
+            <h3>{p.name}</h3>
+            <p>${p.price}</p>
+            <Link to={`/products/${p.id}`}>View Details</Link>
+          </div>
         ))}
-      </ul>
+      </div>
     </div>
   );
 }
-
-export default ProductList;
-

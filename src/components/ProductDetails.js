@@ -1,23 +1,40 @@
-import React from "react";
-import { useParams, useNavigate } from "react-router-dom";
+/* ... previous imports ... */
+import ProductForm from "./ProductForm";
 
-function ProductDetails({ products }) {
+export default function ProductDetails() {
   const { id } = useParams();
   const navigate = useNavigate();
-  const product = products.find(p => p.id === parseInt(id));
+  const { getProduct } = useProducts();
+  const product = getProduct(id);
+  const [edit, setEdit] = useState(false);
 
-  if (!product) return <p>Product not found.</p>;
+  if (!product) return <p style={{ color: "red" }}>Product not found</p>;
 
   return (
     <div>
-      <h2>{product.name}</h2>
-      <img src={product.image} alt={product.name} width="200" />
-      <p>{product.description}</p>
-      <p><strong>Price:</strong> ${product.price}</p>
-      <button className="btn" onClick={() => navigate("/")}>Back</button>
+      <button className="btn" onClick={() => navigate(-1)}>
+        Back
+      </button>
+
+      {edit ? (
+        <ProductForm
+          existing={product}
+          onDone={() => {
+            setEdit(false);
+            navigate(0); // refresh view with new data
+          }}
+        />
+      ) : (
+        <>
+          <img src={product.image} alt={product.name} width="300" />
+          <h2>{product.name}</h2>
+          <p>{product.description}</p>
+          <h3>${product.price}</h3>
+          <button className="float-right" onClick={() => setEdit(true)}>
+            Edit
+          </button>
+        </>
+      )}
     </div>
   );
 }
-
-export default ProductDetails;
-
